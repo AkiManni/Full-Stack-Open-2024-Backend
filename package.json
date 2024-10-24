@@ -7,7 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../Full-Stack-open-2024/osa 2/puhelinluettelo && npm run build && @powershell Copy-Item dist -Recurse ../../../Full-Stack-open-2024-backend/",
+    "build:ui": "@powershell -Command \"if (Test-Path .\\dist) { Remove-Item -Recurse -Force .\\dist } ; cd ../Full-Stack-open-2024/osa` 2/puhelinluettelo ; npm run build ; Copy-Item .\\dist -Recurse ../../../Full-Stack-open-2024-backend/\"",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "Aki Manninen",
