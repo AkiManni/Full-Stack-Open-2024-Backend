@@ -1,6 +1,6 @@
 # Fullstack Open 2024 puhelinluettelo backend
 
-# Linkki *[puhelinluetteloon:](https://full-stack-open-2024-backend.onrender.com/)*.
+# Linkki *[puhelinluetteloon](https://full-stack-open-2024-backend.onrender.com/)*.
 
 ## 3.1 puhelinluettelon backend step1     DONE
 ## 3.2 puhelinluettelon backend step2     DONE
