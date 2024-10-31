@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express')
-const morgan = require('morgan');
+const morgan = require('morgan')
 const cors = require('cors')
 const app = express()
 const Contact = require('./models/contact')
@@ -47,11 +47,11 @@ morgan.token('customStatus', (req, res) => {
 
 app.use((req, res, next) => {
   if (req.method === 'POST') {
-    morgan(':method :url :customStatus :res[content-length] - :response-time ms :req-body')(req, res, next);
+    morgan(':method :url :customStatus :res[content-length] - :response-time ms :req-body')(req, res, next)
   } else {
-    morgan('tiny')(req, res, next);
+    morgan('tiny')(req, res, next)
   }
-});
+})
 
 app.get('/info', async (request, response) => {
   response.send(`<p>Phonebook has info for ${await Contact.countDocuments({})} people</p>\n<p>${Date()}</p>`)
@@ -93,14 +93,13 @@ app.put('/api/persons/:id', (request, response, next) => {
 
 app.delete('/api/persons/:id', (request, response, next) => {
   Contact.findByIdAndDelete(request.params.id)
-    .then(result => {
+    .then(() => {
       response.status(204).end()
     })
     .catch(error => next(error))
 })
 
-
-app.post('/api/persons', (request, response, next) => {  
+app.post('/api/persons', (request, response, next) => {
   const body = request.body
 
   if (body.name === undefined) {
